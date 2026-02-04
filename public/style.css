@@ -1,0 +1,1005 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body.center {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #1f3c88, #5893d4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ---------- LANDING ---------- */
+.landing {
+  background: white;
+  padding: 50px;
+  border-radius: 16px;
+  width: 420px;
+  text-align: center;
+  animation: fadeUp 1s ease;
+}
+
+.landing h1 span {
+  color: #1f3c88;
+}
+
+.landing button {
+  margin-top: 25px;
+}
+
+/* ---------- FORM ---------- */
+.form-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  width: 420px;
+  animation: fadeUp 0.8s ease;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  transition: 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #1f3c88;
+  outline: none;
+  box-shadow: 0 0 5px rgba(31,60,136,0.4);
+}
+
+textarea {
+  resize: none;
+  height: 90px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 8px;
+  background: #1f3c88;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #162c66;
+  transform: translateY(-2px);
+}
+
+/* ---------- TOAST ---------- */
+/* #toast {
+  position: fixed;
+  bottom: 30px;
+  background: #28a745;
+  color: white;
+  padding: 14px 22px;
+  border-radius: 8px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 0.5s;
+} */
+
+#toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ---------- SUCCESS ---------- */
+.success-card {
+  background: white;
+  padding: 50px;
+  border-radius: 16px;
+  text-align: center;
+  animation: fadeUp 1s ease;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================
+   ADMIN PANEL STYLES
+========================= */
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ---------- CARD ---------- */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 35px;
+  border-radius: 16px;
+  width: 380px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+  animation: slideIn 0.9s ease;
+}
+
+.card h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #0f2027;
+  font-weight: 600;
+}
+
+/* ---------- INPUTS ---------- */
+.card input {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.card input:focus {
+  border-color: #2c5364;
+  outline: none;
+  box-shadow: 0 0 8px rgba(44, 83, 100, 0.4);
+}
+
+/* ---------- BUTTON ---------- */
+.card button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #0f2027, #2c5364);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(44, 83, 100, 0.5);
+}
+
+/* ---------- ADMIN PANEL ---------- */
+#panel {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80%;
+  max-width: 900px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ---------- DATA LIST ---------- */
+#data {
+  margin-top: 20px;
+}
+
+#data p {
+  background: #f7f9fc;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: fadeUp 0.4s ease;
+}
+
+#data button {
+  background: #dc3545;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#data button:hover {
+  background: #b02a37;
+}
+
+/* ---------- HIDDEN ---------- */
+.hidden {
+  display: none;
+}
+
+/* ---------- ANIMATIONS ---------- */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* ================= ADMIN TABLE ================= */
+
+.admin-container {
+  background: white;
+  padding: 30px;
+  width: 90%;
+  max-width: 1100px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+  animation: fadeUp 0.8s ease;
+}
+
+.admin-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.add-btn {
+  background: #198754;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+.add-btn:hover {
+  background: #157347;
+}
+
+/* TABLE */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: #1f3c88;
+  color: white;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  background: #f8f9fa;
+}
+
+tr:nth-child(even) td {
+  background: #eef1f6;
+}
+
+/* ACTION BUTTONS */
+.action-btn {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit {
+  background: #0d6efd;
+  color: white;
+}
+
+.delete {
+  background: #dc3545;
+  color: white;
+}
+
+.edit:hover { background: #0b5ed7; }
+.delete:hover { background: #b02a37; }
+
+/* MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 30px;
+  width: 400px;
+  border-radius: 12px;
+  animation: slideIn 0.4s ease;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 12px;
+}
+
+.modal-content button {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.cancel {
+  background: #6c757d;
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* TOAST MESSAGE */
+/* .toast {
+  position: fixed;
+  bottom: 30px;
+  right: 50000px;
+  background: #dc3545;
+  color: white;
+  padding: 14px 20px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  animation: slideIn 0.4s ease;
+  z-index: 1000;
+} */
+
+.toast.show {
+  display: block;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.admin-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  font-family: "Poppins", sans-serif;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn.add {
+  background: #198754;
+  color: #fff;
+}
+
+.btn.refresh {
+  background: #0d6efd;
+  color: #fff;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.admin-table thead {
+  background: #1f3c88;
+  color: white;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.admin-table tbody tr:nth-child(even) {
+  background: #f4f6f9;
+}
+
+.admin-table tbody tr:hover {
+  background: #eef2ff;
+}
+
+.action-btn {
+  display: flex;
+  gap: 6px;
+}
+
+.action-btn button {
+  padding: 6px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.edit {
+  background: #dc3545;
+  color: white;
+}
+
+.delete {
+  background: #6c757d;
+  color: white;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #1f3c88;
+  color: white;
+}
+
+.btn.logout {
+  background: #dc3545;
+  color: white;
+}
+
+.btn.logout:hover {
+  background: #b02a37;
+}
+
+.password-wrapper {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  user-select: none;
+  font-size: 16px;
+}
+
+.confirm-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.confirm-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+.confirm-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-cancel {
+  background: #ccc;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  background: #e74c3c;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, sans-serif;
+}
+
+/* Page center */
+body.center {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #2c4ea2, #4b79d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Card */
+.form-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 420px;
+  padding: 28px 26px;
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.form-card h2 {
+  margin: 0 0 6px;
+  text-align: center;
+  color: #1f2d3d;
+}
+
+/* Subtitle */
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 18px;
+}
+
+/* Inputs & textarea */
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+/* Textarea */
+.form-card textarea {
+  min-height: 90px;
+  resize: vertical;
+}
+
+/* Focus effect */
+.form-card input:focus,
+.form-card textarea:focus {
+  outline: none;
+  border-color: #4b79d8;
+  box-shadow: 0 0 0 3px rgba(75, 121, 216, 0.15);
+}
+
+/* Buttons */
+.form-card button {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+/* Submit */
+.form-card button:first-of-type {
+  background: #2c4ea2;
+  color: #fff;
+  margin-top: 6px;
+}
+
+.form-card button:first-of-type:hover {
+  background: #243f86;
+}
+
+/* Back button */
+.form-card button:last-of-type {
+  margin-top: 10px;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.form-card button:last-of-type:hover {
+  background: #d1d5db;
+}
+
+/* Button click */
+.form-card button:active {
+  transform: scale(0.98);
+}
+
+ /* Toast */
+#toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #22c55e;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+  .form-card {
+    padding: 22px 18px;
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #3b5db8, #4a72d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center card */
+.form-card {
+  background: #fff;
+  width: 100%;
+  max-width: 380px; /* ⬅ smaller width */
+  padding: 18px 20px; /* ⬅ reduced padding */
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Title */
+.form-card h2 {
+  margin: 0 0 4px;
+  font-size: 18px; /* ⬅ smaller */
+  text-align: center;
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: 12px;
+  text-align: center;
+  color: #666;
+  margin-bottom: 12px;
+}
+
+/* Inputs & textarea */
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 8px 10px; /* ⬅ reduced height */
+  margin-bottom: 8px; /* ⬅ tighter spacing */
+  font-size: 13px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+/* Textarea */
+.form-card textarea {
+  min-height: 70px; /* ⬅ smaller */
+  resize: none;
+}
+
+/* Buttons */
+.form-card button {
+  width: 100%;
+  padding: 9px;
+  font-size: 13px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* Submit button */
+.form-card button:first-of-type {
+  background: #2f52b2;
+  color: white;
+  margin-bottom: 6px;
+}
+
+/* Back button */
+.form-card button:last-of-type {
+  background: #e5e7eb;
+  color: #333;
+}
+
+/* Toast */
+/* #toast {
+  position: fixed;
+  bottom: 20px;
+  right: 40%;
+  background: #22c55e;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 6px;
+  display: none;
+  font-size: 13px;
+} */
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #3b5db8, #4a72d8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* FORM CARD */
+.form-card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 380px;
+
+  /* 🔥 INTERNAL SCROLLING */
+  max-height: 90vh;
+  overflow-y: auto;
+
+  padding: 16px 18px;
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* HEADINGS */
+.form-card h2 {
+  text-align: center;
+  margin: 8px 0 4px;
+  font-size: 18px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 12px;
+}
+
+/* INPUTS */
+.form-card input,
+.form-card textarea {
+  width: 100%;
+  padding: 9px 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+.form-card textarea {
+  resize: none;
+  height: 80px;
+}
+
+.form-card input:focus,
+.form-card textarea:focus {
+  border-color: #3b5db8;
+}
+
+/* BUTTONS */
+.form-card button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.form-card button:first-of-type {
+  background: #2f52b6;
+  color: white;
+  margin-top: 6px;
+}
+
+.form-card button:last-of-type {
+  background: #e5e7eb;
+  margin-top: 6px;
+}
+
+/* CLEAN SCROLLBAR */
+.form-card::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-card::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 10px;
+}
+
+
+/* FORM CARD */
+.form-card,
+.card,
+.modal-content {
+  background: #ffffff;
+  width: 100%;
+  max-width: 360px;       /* slightly smaller than before */
+  max-height: 80vh;       /* limit height to viewport */
+  overflow-y: auto;       /* scroll if content exceeds */
+  padding: 16px 18px;
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+}
+
+/* Scrollbar styling for consistency */
+.form-card::-webkit-scrollbar,
+.card::-webkit-scrollbar,
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.form-card::-webkit-scrollbar-thumb,
+.card::-webkit-scrollbar-thumb,
+.modal-content::-webkit-scrollbar-thumb {
+  background: #c7d2fe;
+  border-radius: 10px;
+}
+
+/* Headings */
+.form-card h2,
+.card h2,
+.modal-content h2 {
+  text-align: center;
+  margin: 8px 0 6px;
+  font-size: 18px;
+}
+
+/* Subtitle */
+.subtitle {
+  text-align: center;
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+.form-card input,
+.form-card textarea,
+.card input,
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 8px 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  outline: none;
+}
+
+.form-card textarea,
+.modal-content textarea {
+  resize: none;
+  height: 80px;
+}
+
+.form-card input:focus,
+.form-card textarea:focus,
+.card input:focus,
+.modal-content input:focus,
+.modal-content textarea:focus {
+  border-color: #3b5db8;
+}
+
+/* Buttons */
+.form-card button,
+.card button,
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.form-card button:first-of-type,
+.card button:first-of-type,
+.modal-content button:first-of-type {
+  background: #2f52b6;
+  color: white;
+  margin-top: 6px;
+}
+
+.form-card button:last-of-type,
+.card button:last-of-type,
+.modal-content button:last-of-type {
+  background: #e5e7eb;
+  color: #333;
+  margin-top: 6px;
+}
