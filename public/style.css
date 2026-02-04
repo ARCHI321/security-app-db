@@ -84,17 +84,7 @@ button:hover {
 }
 
 /* ---------- TOAST ---------- */
-/* #toast {
-  position: fixed;
-  bottom: 30px;
-  background: #28a745;
-  color: white;
-  padding: 14px 22px;
-  border-radius: 8px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: 0.5s;
-} */
+
 
 #toast.show {
   opacity: 1;
@@ -791,18 +781,7 @@ body {
   color: #333;
 }
 
-/* Toast */
-/* #toast {
-  position: fixed;
-  bottom: 20px;
-  right: 40%;
-  background: #22c55e;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 6px;
-  display: none;
-  font-size: 13px;
-} */
+
 
 
 * {
@@ -1002,4 +981,111 @@ body {
   background: #e5e7eb;
   color: #333;
   margin-top: 6px;
+}
+
+/* ===============================
+   MOBILE (phones < 600px)
+================================ */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .landing,
+  .form-card,
+  .card,
+  .success-card {
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .landing h1 {
+    font-size: 22px;
+  }
+
+  .landing p {
+    font-size: 13px;
+  }
+
+  input,
+  textarea,
+  button {
+    font-size: 14px;
+  }
+
+  /* Admin panel */
+  .admin-container {
+    padding: 15px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .admin-actions {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .admin-actions input,
+  .admin-actions button {
+    width: 100%;
+  }
+
+  /* Table → scroll on mobile */
+  .admin-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .pagination {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+/* ===============================
+   TABLET (601px – 992px)
+================================ */
+@media (max-width: 992px) {
+  .landing,
+  .form-card,
+  .card,
+  .success-card {
+    max-width: 520px;
+  }
+
+  .admin-container {
+    padding: 25px;
+  }
+
+  .admin-header h1 {
+    font-size: 22px;
+  }
+
+  .admin-actions input {
+    min-width: 150px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+/* ===============================
+   SMALL LAPTOP (≤ 1200px)
+================================ */
+@media (max-width: 1200px) {
+  .admin-container {
+    width: 100%;
+  }
+
+  .admin-table {
+    font-size: 14px;
+  }
 }
