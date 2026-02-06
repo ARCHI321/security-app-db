@@ -109,8 +109,8 @@ app.put("/update/:id", (req, res) => {
     "UPDATE requests SET first_name=?, last_name = ? , phone=?, email=?, mobile= ? , bank = ? , device = ?, description=? WHERE id=?";
 
   const values = [
-    req.body.first_name,
-    req.body.last_name,
+    req.body.first,
+    req.body.last,
     req.body.phone,
     req.body.email,
     req.body.mobile,
@@ -119,6 +119,8 @@ app.put("/update/:id", (req, res) => {
     req.body.description,
     req.params.id,
   ];
+  // console.log(sql);
+  // console.log(values);
 
   db.query(sql, values, (err, result) => {
     if (err) {

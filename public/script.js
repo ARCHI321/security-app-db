@@ -181,6 +181,17 @@ function edit(id) {
    SAVE (ADD / UPDATE)
 ================================ */
 function save() {
+  console.log(editId);
+  let first = document.getElementById("m_first_name").value.trim();
+  let last = document.getElementById("m_last_name").value.trim();
+  let address = document.getElementById("m_address").value.trim();
+  let phone = document.getElementById("m_phone").value.trim();
+  let email = document.getElementById("m_email").value.trim();
+  let mobile = document.getElementById("m_mobile").value.trim();
+  let bank = document.getElementById("m_bank").value.trim();
+  let device = document.getElementById("m_device").value.trim();
+  let description = document.getElementById("m_description").value.trim();
+
   const payload = {
     first: document.getElementById("m_first_name").value,
     last: document.getElementById("m_last_name").value,
@@ -193,8 +204,39 @@ function save() {
     device: document.getElementById("m_device").value,
   };
 
+  if (!payload.first || !payload.last || !payload.phone || !payload.email) {
+    // alert("Please fill required fields");
+    showToast("Please fill required fields");
+    return;
+  }
+  // Regex patterns
+  const phoneRegex = /^[0-9]{10}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  // Validation
+  if (first.length < 3 || last.length < 3) {
+    showToast("First and last name must be at least 3 characters");
+    return;
+  }
+
+  if (address.length < 5) {
+    showToast("Address must be at least 5 characters");
+    return;
+  }
+
+  if (!phoneRegex.test(phone) || !phoneRegex.test(mobile)) {
+    showToast("Phone number or mobile number must be exactly 10 digits");
+    return;
+  }
+
+  if (!emailRegex.test(email)) {
+    showToast("Please enter a valid email address");
+    return;
+  }
+
   const url = editId ? `/update/${editId}` : "/submit";
   const method = editId ? "PUT" : "POST";
+  // console.log(editId);
   // console.log(url);
   // console.log(method);
   // console.log(payload);
@@ -204,9 +246,10 @@ function save() {
     body: JSON.stringify(payload),
   })
     .then(() => {
-      closeModal();
       loadData();
+      // console.log(editId);
       showToast(editId ? "Record updated" : "Record added");
+      closeModal();
     })
     .catch(() => showToast("Operation failed"));
 }
@@ -295,8 +338,8 @@ function submitForm() {
     return;
   }
 
-  if (!phoneRegex.test(phone)) {
-    showToast("Phone number must be exactly 10 digits");
+  if (!phoneRegex.test(phone) || !phoneRegex.test(mobile)) {
+    showToast("Phone number or mobile number must be exactly 10 digits");
     return;
   }
 
