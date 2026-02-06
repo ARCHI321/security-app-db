@@ -32,6 +32,9 @@
             🔄 Refresh
           </button>
           <button class="add-btn" onclick="openModal()">+ Add New</button>
+          <button class="btn download" onclick="downloadExcel()">
+            ⬇ Download as Excel
+          </button>
           <button class="btn logout" onclick="logout()">🚪 Logout</button>
         </div>
       </div>
@@ -41,9 +44,10 @@
             <th>First Name</th>
             <th>Last Name</th>
             <th>Phone</th>
+            <th>Address</th>
             <th>Email</th>
             <th>Issue</th>
-            <th>Mobikle</th>
+            <th>Mobile</th>
             <th>Bank</th>
             <th>Device</th>
             <th>Actions</th>
@@ -73,9 +77,10 @@
       <div class="modal-content">
         <h2>Add / Edit Request</h2>
 
-        <input id="m_first_name" placeholder="Name" />
-        <input id="m_last_name" placeholder="Name" />
+        <input id="m_first_name" placeholder="First Name" />
+        <input id="m_last_name" placeholder="Last Name" />
         <input id="m_phone" placeholder="Phone" />
+        <input id="m_address" placeholder="Address" />
         <input id="m_email" placeholder="Email" />
         <input id="m_mobile" placeholder="Mobile" />
         <input id="m_bank" placeholder="Bank" />

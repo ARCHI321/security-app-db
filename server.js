@@ -130,6 +130,50 @@ app.put("/update/:id", (req, res) => {
   });
 });
 
+app.get("/download-excel", (req, res) => {
+  const sql = `
+    SELECT
+      first_name AS "First Name",
+      last_name AS "Last Name",
+      phone AS "Phone",
+      email AS "Email",
+      description AS "Issue",
+      mobile AS "Mobile",
+      bank AS "Bank",
+      device AS "Device"
+    FROM requests
+    ORDER BY id DESC
+  `;
+
+  db.query(sql, (err, rows) => {
+    if (err) {
+      console.error("EXPORT ERROR:", err);
+      return res.status(500).send("Export failed");
+    }
+
+    if (!rows.length) {
+      return res.status(404).send("No data found");
+    }
+
+    // CSV header
+    const headers = Object.keys(rows[0]).join(",");
+
+    // CSV rows
+    const csvRows = rows.map((row) =>
+      Object.values(row)
+        .map((val) => `"${String(val ?? "").replace(/"/g, '""')}"`)
+        .join(","),
+    );
+
+    const csvData = "\uFEFF" + headers + "\n" + csvRows.join("\n");
+
+    res.setHeader("Content-Type", "text/csv; charset=utf-8");
+    res.setHeader("Content-Disposition", "attachment; filename=admin_data.csv");
+
+    res.send(csvData);
+  });
+});
+
 // app.listen(process.env.PORT, () =>
 //   console.log("✅ Server running on http://localhost:3000"),
 // );

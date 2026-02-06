@@ -77,14 +77,15 @@ function renderTable() {
   pageRows.forEach((item) => {
     tableBody.innerHTML += `
       <tr>
-        <td>${item.first_name ?? "-"}</td>
-        <td>${item.last_name ?? "-"}</td>
-        <td>${item.phone ?? "-"}</td>
-        <td>${item.email ?? "-"}</td>
-        <td>${item.description ?? "-"}</td>
-        <td>${item.mobile ?? "-"}</td>
-        <td>${item.bank ?? "-"}</td>
-        <td>${item.device ?? "-"}</td>
+        <td data-full="${item.first_name ?? "-"}">${item.first_name ?? "-"}</td>
+        <td data-full="${item.last_name ?? "-"}">${item.last_name ?? "-"}</td>
+        <td data-full="${item.phone ?? "-"}">${item.phone ?? "-"}</td>
+        <td data-full="${item.address ?? "-"}">${item.address ?? "-"}</td>
+        <td data-full="${item.email ?? "-"}">${item.email ?? "-"}</td>
+        <td data-full="${item.description ?? "-"}">${item.description ?? "-"}</td>
+        <td data-full="${item.mobile ?? "-"}">${item.mobile ?? "-"}</td>
+        <td data-full="${item.bank ?? "-"}">${item.bank ?? "-"}</td>
+        <td data-full="${item.device ?? "-"}">${item.device ?? "-"}</td>
         <td>
           <button class="edit-btn" onclick="edit(${item.id})">Edit</button>
           <button class="delete-btn" onclick="del(${item.id})">Delete</button>
@@ -135,9 +136,16 @@ function openModal() {
   editId = null;
   document.getElementById("modal").classList.remove("hidden");
 
-  ["m_name", "m_phone", "m_email", "m_description"].forEach(
-    (id) => (document.getElementById(id).value = ""),
-  );
+  [
+    "m_first_name",
+    "m_last_name",
+    "m_phone",
+    "m_email",
+    "m_description",
+    "m_device",
+    "m_bank",
+    "m_mobile",
+  ].forEach((id) => (document.getElementById(id).value = ""));
 
   document.querySelector("#modal h2").innerText = "Add Request";
 }
@@ -158,6 +166,7 @@ function edit(id) {
   document.getElementById("m_first_name").value = row.first_name || "";
   document.getElementById("m_last_name").value = row.last_name || "";
   document.getElementById("m_phone").value = row.phone || "";
+  document.getElementById("m_address").value = row.address || "";
   document.getElementById("m_email").value = row.email || "";
   document.getElementById("m_mobile").value = row.mobile || "";
   document.getElementById("m_bank").value = row.bank || "";
@@ -173,19 +182,22 @@ function edit(id) {
 ================================ */
 function save() {
   const payload = {
-    first_name: document.getElementById("m_first_name").value,
-    last_name: document.getElementById("m_last_name").value,
+    first: document.getElementById("m_first_name").value,
+    last: document.getElementById("m_last_name").value,
+    address: document.getElementById("m_address").value,
     phone: document.getElementById("m_phone").value,
     email: document.getElementById("m_email").value,
+    description: document.getElementById("m_description").value,
     mobile: document.getElementById("m_mobile").value,
     bank: document.getElementById("m_bank").value,
     device: document.getElementById("m_device").value,
-    description: document.getElementById("m_description").value,
   };
 
   const url = editId ? `/update/${editId}` : "/submit";
   const method = editId ? "PUT" : "POST";
-
+  // console.log(url);
+  // console.log(method);
+  // console.log(payload);
   fetch(url, {
     method,
     headers: { "Content-Type": "application/json" },
@@ -351,4 +363,17 @@ function logout() {
 function togglePassword() {
   const pwd = document.getElementById("password");
   pwd.type = pwd.type === "password" ? "text" : "password";
+}
+
+async function loadPage(page, class_name) {
+  const res = await fetch(`/${page}`);
+  const html = await res.text();
+
+  // replace ONLY content area
+  document.querySelector(`.${class_name}`).style.display = "none";
+  document.getElementById("app").innerHTML = html;
+}
+
+function downloadExcel() {
+  window.location.href = "/download-excel";
 }
